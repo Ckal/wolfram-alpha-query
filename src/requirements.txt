@@ -1,0 +1,4 @@
+os
+requests
+transformers>=4.35.0
+gradio>=4.0.0

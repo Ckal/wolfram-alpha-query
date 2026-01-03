@@ -1,0 +1,4 @@
+from transformers import launch_gradio_demo
+from wolfram_alpha_tool import WolframAlpha
+
+launch_gradio_demo(WolframAlpha)
