@@ -1,0 +1,18 @@
+name: wolfram-alpha-query
+type: gradio-space
+sdk: static
+
+metadata:
+  space_id: Chris4K/wolfram-alpha-query
+  original_url: https://huggingface.co/spaces/Chris4K/wolfram-alpha-query
+
+deploy:
+  targets:
+    - public-repo
+    - huggingface
+
+build:
+  command: bash build.sh
+
+test:
+  command: echo "Tests not yet implemented"

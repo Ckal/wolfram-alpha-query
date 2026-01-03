@@ -1,0 +1,5 @@
+{
+  "description": "This is a tool that uses WolframAlpha to compute any mathematical query. It takes one input query, and returns a verbose result in xml format, which includes the solution.",
+  "name": "wolfram_alpha",
+  "tool_class": "wolfram_alpha_tool.WolframAlpha"
+}

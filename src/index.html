@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>My static Space</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="card">
+			<h3>Wolfram Alpha Tool for HuggingFace Agents</h3>
+            <h2>Demo Colab Notebook:</h2>
+          
+          <a href="https://colab.research.google.com/drive/1wRv65uzfHO3WUJCo1tcRZgadq4XQ-o--">https://colab.research.google.com/drive/1wRv65uzfHO3WUJCo1tcRZgadq4XQ-o--</a><br>
+              <h3>Usage instructions:</h3>
+              <h1>Create and save WolframAlpha APP_ID as an environment variable:</h1>
+<code>	
+os.environ["WOLFRAM_APP_ID"] = "YOUR_WOLFRAM_APP_ID"<br>
+# Get it from: <a href="https://products.wolframalpha.com/simple-api/documentation">https://products.wolframalpha.com/simple-api/documentation</a><br>
+from transformers import load_tool<br>
+wolframalpha_tool = load_tool('LecJackS/wolfram-alpha-query')<br>
+</code>
+<br>
+<h1>Test it:</h1>
+<code>	
+query = "Integrate [ log(x)^2 + e^(x^2) dx ]"<br>
+print(wolframalpha_tool(query))<br>
+</code>
+<br>
+<h1>Add tool to agent:</h1>
+<code>	
+agent = HfAgent("https://api-inference.huggingface.co/models/bigcode/starcoder", additional_tools=[wolframalpha_tool])<br>
+</code>
+<br>
+<h1>Ask the agent to solve some math:</h1>
+<code>	
+res = agent.run("Solve the following equation: Area of circle of radius 2")<br>
+print(res)<br>
+<br>
+res = agent.run("Integrate log(x)^2 + e^(x^2) dx")<br>
+print(res)<br>
+</code>  
+		</div>
+	</body>
+</html>
